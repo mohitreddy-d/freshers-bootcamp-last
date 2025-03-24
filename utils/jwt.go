@@ -2,12 +2,13 @@ package utils
 
 import (
 	"errors"
+	"os"
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
 )
 
-var jwtSecret = []byte("mohit")
+var jwtSecret = []byte(os.Getenv("JWT_SECRET"))
 
 // Claims represents the JWT claims
 type Claims struct {

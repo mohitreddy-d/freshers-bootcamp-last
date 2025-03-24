@@ -1,19 +1,36 @@
 package main
 
 import (
+	"fmt"
 	"freshers-bootcamp-last/handlers"
 	"freshers-bootcamp-last/middleware"
 	"freshers-bootcamp-last/models"
 	"freshers-bootcamp-last/repositories"
 	"freshers-bootcamp-last/services"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"log"
+	"os"
 )
 
 func main() {
 	// Connect to MySQL
-	dsn := "root:root3004@tcp(localhost:3306)/retailer_db?charset=utf8mb4&parseTime=True&loc=Local"
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatalf("Error loading .env file: %v", err)
+	}
+
+	dbUser := os.Getenv("DB_USER")
+	dbPassword := os.Getenv("DB_PASSWORD")
+	dbHost := os.Getenv("DB_HOST")
+	dbPort := os.Getenv("DB_PORT")
+	dbName := os.Getenv("DB_NAME")
+
+	// Form the DSN using environment variables
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+		dbUser, dbPassword, dbHost, dbPort, dbName)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")

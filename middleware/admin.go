@@ -5,10 +5,11 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 	"net/http"
+	"os"
 	"strings"
 )
 
-const secretKey = "mohit"
+var secretKey = os.Getenv("JWT_SECRET")
 
 func AdminMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {

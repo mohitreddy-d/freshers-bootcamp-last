@@ -28,6 +28,23 @@ func (r *ProductRepository) Update(product *models.Product) error {
 	return r.db.Save(product).Error
 }
 
+func (r *ProductRepository) PatchUpdate(id uint, updates map[string]interface{}) (*models.Product, error) {
+	r.mutex.Lock()
+	defer r.mutex.Unlock()
+
+	// Check if product exists
+	var existingProduct models.Product
+	if err := r.db.First(&existingProduct, id).Error; err != nil {
+		return nil, err
+	}
+
+	// Perform patch update using the map data
+	if err := r.db.Model(&existingProduct).Updates(updates).Error; err != nil {
+		return nil, err
+	}
+	return &existingProduct, nil
+}
+
 func (r *ProductRepository) FindAll() ([]models.Product, error) {
 	var products []models.Product
 	err := r.db.Find(&products).Error

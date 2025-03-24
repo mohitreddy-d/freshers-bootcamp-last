@@ -7,7 +7,7 @@ import (
 	"github.com/golang-jwt/jwt/v5"
 )
 
-var jwtSecret = []byte("your-256-bit-secret")
+var jwtSecret = []byte("mohit")
 
 // Claims represents the JWT claims
 type Claims struct {

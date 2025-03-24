@@ -44,18 +44,20 @@ func main() {
 	r.POST("/register", authHandler.Register)
 	r.POST("/login", authHandler.Login)
 	r.GET("/products", productHandler.GetAllProducts)
+	r.GET("/products/:id", productHandler.GetProductById)
 	r.POST("/admin/register", authHandler.RegisterAdmin)
 	// Protected routes (require authentication)
+	adminGroup := r.Group("/")
+	adminGroup.Use(middleware.AdminMiddleware())
+	{
+		adminGroup.POST("/products", productHandler.CreateProduct)
+		adminGroup.PUT("/products/:id", productHandler.UpdateProduct)
+		adminGroup.DELETE("/products/:id", productHandler.DeleteProduct)
+	}
+
 	authGroup := r.Group("/")
 	authGroup.Use(middleware.AuthMiddleware())
 	{
-		// Product routes
-		authGroup.Use(middleware.AdminMiddleware())
-		{
-			authGroup.POST("/products", productHandler.CreateProduct)
-			authGroup.PUT("/products/:id", productHandler.UpdateProduct)
-			authGroup.DELETE("/products/:id", productHandler.DeleteProduct)
-		}
 
 		// Order routes
 		authGroup.POST("/orders", orderHandler.PlaceOrder)

@@ -100,10 +100,10 @@ This document lists all the available API endpoints for the Retailer Service. Ea
 
 # testing screenshots (request response):
 
-![Screenshot 2025-03-24 at 10.52.58 AM.png](..%2FScreenshot%202025-03-24%20at%2010.52.58%E2%80%AFAM.png)
-![Screenshot 2025-03-24 at 10.56.22 AM.png](..%2FScreenshot%202025-03-24%20at%2010.56.22%E2%80%AFAM.png)
-![Screenshot 2025-03-24 at 11.43.12 AM.png](..%2FScreenshot%202025-03-24%20at%2011.43.12%E2%80%AFAM.png)
-![Screenshot 2025-03-24 at 11.43.42 AM.png](..%2FScreenshot%202025-03-24%20at%2011.43.42%E2%80%AFAM.png)
-![Screenshot 2025-03-24 at 11.44.21 AM.png](..%2FScreenshot%202025-03-24%20at%2011.44.21%E2%80%AFAM.png)
-![Screenshot 2025-03-24 at 11.49.39 AM.png](..%2FScreenshot%202025-03-24%20at%2011.49.39%E2%80%AFAM.png)
-![Screenshot 2025-03-24 at 11.50.17 AM.png](..%2FScreenshot%202025-03-24%20at%2011.50.17%E2%80%AFAM.png)
+<img width="1512" alt="Screenshot 2025-03-24 at 10 52 58 AM" src="https://github.com/user-attachments/assets/5f4879c0-ae3e-4425-bf73-cf1091a35e55" />
+<img width="1512" alt="Screenshot 2025-03-24 at 10 56 22 AM" src="https://github.com/user-attachments/assets/bfca8d19-f6d1-40b8-8c48-4f91435c6df7" />
+<img width="1512" alt="Screenshot 2025-03-24 at 11 43 12 AM" src="https://github.com/user-attachments/assets/910bee31-0a02-4568-9830-a253ab1c961c" />
+<img width="1512" alt="Screenshot 2025-03-24 at 11 43 42 AM" src="https://github.com/user-attachments/assets/e3b1fb1b-2d10-4bfc-8c2c-be091f5e55da" />
+<img width="1512" alt="Screenshot 2025-03-24 at 11 44 21 AM" src="https://github.com/user-attachments/assets/c275824d-6193-4ba0-bb74-d3189d506b49" />
+<img width="1512" alt="Screenshot 2025-03-24 at 11 49 39 AM" src="https://github.com/user-attachments/assets/9d6fb1a1-bdc7-4d0b-9dfb-e03c5a1e21ea" />
+<img width="1512" alt="Screenshot 2025-03-24 at 11 50 17 AM" src="https://github.com/user-attachments/assets/b9c3244a-b329-4523-bdf8-7c1c3bdd9b8d" />

@@ -46,7 +46,7 @@ func GenerateToken(userID uint, role string) (string, error) {
 }
 
 // ValidateToken validates a JWT token and returns the user ID and role
-func ValidateToken(tokenString string) (uint, string, error) {
+func ValidateToken(tokenString string) (*Claims, string, error) {
 	// Parse the token
 	token, err := jwt.ParseWithClaims(tokenString, &Claims{}, func(token *jwt.Token) (interface{}, error) {
 		// Validate the signing method
@@ -56,13 +56,13 @@ func ValidateToken(tokenString string) (uint, string, error) {
 		return jwtSecret, nil
 	})
 	if err != nil {
-		return 0, "", err
+		return nil, "", err
 	}
 
 	// Extract the claims
 	if claims, ok := token.Claims.(*Claims); ok && token.Valid {
-		return claims.UserID, claims.Role, nil
+		return claims, claims.Role, nil
 	}
 
-	return 0, "", errors.New("invalid token")
+	return nil, "", errors.New("invalid token")
 }
